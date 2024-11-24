@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+    <header>
+        <h1>Universo dos Animes</h1>
+    </header>
+
+    <!-- Botão do menu para telas menores -->
+    <button class="menu-toggle" id="menuToggle">
+        <span>&#9776;</span> Menu
+    </button>
+
+    <nav id="navbar">
+        <a href="#atuais">Animes Atuais</a>
+        <a href="#">Dragon Ball Super</a>
+        <a href="pages/jujutsu.html">Jujutsu Kaisen</a>
+        <a href="#poderes">Games</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navbar = document.getElementById('navbar');
+
+        // Adiciona evento de clique para abrir/fechar o menu
+        menuToggle.addEventListener('click', () => {
+            const isVisible = navbar.style.display === 'flex';
+            navbar.style.display = isVisible ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
