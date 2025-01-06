@@ -6072,6 +6072,9 @@ button.close {
   vertical-align: text-top !important;
 }
 
+.bg-redflag{
+  background-color: red;
+}
 .bg-primary {
   background-color: #007bff !important;
 }
