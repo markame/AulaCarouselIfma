@@ -219,7 +219,42 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 <script>
-   
+    // Função para ajustar o tamanho das imagens do carousel
+    function ajustarImagem(imgElement) {
+        // Definir as dimensões de destino
+        const larguraDesejada = 1920;
+        const alturaDesejada = 460;
+
+        // Obter as dimensões originais da imagem
+        const larguraOriginal = imgElement.naturalWidth;
+        const alturaOriginal = imgElement.naturalHeight;
+
+        // Calcular as razões de escala
+        const proporcaoLargura = larguraDesejada / larguraOriginal;
+        const proporcaoAltura = alturaDesejada / alturaOriginal;
+
+        // Escolher a menor razão de escala para manter a proporção
+        const proporcao = Math.min(proporcaoLargura, proporcaoAltura);
+
+        // Calcular as novas dimensões
+        const novaLargura = larguraOriginal * proporcao;
+        const novaAltura = alturaOriginal * proporcao;
+
+        // Ajustar o tamanho da imagem
+        imgElement.width = novaLargura;
+        imgElement.height = novaAltura;
+
+        // Centralizar a imagem, se necessário (opcional)
+        imgElement.style.display = "block";
+        imgElement.style.marginLeft = `auto`;
+        imgElement.style.marginRight = `auto`;
+    }
+
+    // Espera a página carregar e ajusta as imagens do carousel
+    document.addEventListener('DOMContentLoaded', function() {
+        const imagensCarousel = document.querySelectorAll('#animeCarousel .carousel-item img');
+        imagensCarousel.forEach(img => ajustarImagem(img));
+    });
 </script>
 
 </html>
